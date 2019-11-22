@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        header {
+            top: 0;
+            height: 50px;
+            position: fixed;
+            text-align: center;
+            background: grey;
+            width: 100%;
+            line-height: 50px;
+            color: red;
+        }
+
+        nav {
+            display: inline-block;
+            margin: 0 50px;
+        }
+
+        article {
+            height: 500px;
+            width: 100%;
+            border: 1px solid red;
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    <header id="top">
+        <nav onclick="scrolling('#content1')">首页</nav>
+        <nav onclick="scrolling('#content2')">锚点一</nav>
+        <nav onclick="scrolling('#content3')">锚点二</nav>
+    </header>
+    <container>
+        <article class="content1" id="content1">
+            <h3>首页</h3>
+        </article>
+        <article class="content2" id="content2">
+            <h3>锚点一</h3>
+        </article>
+        <article class="content3" id="content3">
+            <h3>锚点二</h3>
+        </article>
+
+    </container>
+
+</body>
+<script type="text/javascript">
+        var topH = $("#top").height();//获取顶部导航条的高度
+        console.log(topH);
+        function scrolling(select) {
+        $("html,body").animate({
+            scrollTop: $(select).offset().top-topH//定义位置
+        }, {
+            duration: 500,//定义时间
+            easing: "swing"//指定使用何种动画效果，默认是“swing”，还可以设为“linear”或自定义的动画样式的函数名称
+        });
+        return false;
+    }
+</script>
+
+</html>
