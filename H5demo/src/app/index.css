@@ -19,21 +19,33 @@ body{
 
 .header{
     position: absolute;
+    /* margin-bottom: -366px; */
     width: 1366px;
     height: 288px;
     background: #1890FF;
     top: 2950px;
+    z-index: 99;
 }
 .navBar{
-    background-color: #C4C4C4;
-    height: 2950px;
-    position: absolute;
-    width: 1360px;
+    background-color: #FFFFFF;
+    height: 2958px;
+    position: fixed;
+    width: 1366px;
     margin-top: -930px;
-    display: block;
+    display: none;
+    z-index: 100;
 }
 .navContent{
     margin: 300px 150px;
+}
+.navContent a{
+    color: black;
+    text-decoration:none;
+    cursor: pointer;
+}
+.days a{
+    text-decoration:none;
+    cursor: pointer;
 }
 .tableCon{
     margin-top: 120px;
@@ -46,6 +58,10 @@ body{
     margin-top: 80px;
     display: flex;
     flex-wrap:wrap;
+}
+.days a{
+    border: 1px solid grey;
+    box-sizing: border-box;
 }
 .daysBox{
     width: 160px;
@@ -73,9 +89,8 @@ body{
     height: 2950px;
     position: absolute;
     left: 0px;
-    width: 1360px;
+    width: 1366px;
     top: 0%;
-    /* transform: translateY(-50%); */
 }
 .banner-slide-content{
     margin-left: 8.4%;
@@ -98,10 +113,9 @@ body{
     margin-top: 190px;
 }
 .content{
-    width: 1200px;
+    width: 1100px;
     margin-top: 3400px;
-    margin-left: 8.4%;
-    margin-right: 8.4%;
+    margin-left: 13.4%;
     position: absolute;
 }
 .selfIntroduction{
@@ -109,7 +123,7 @@ body{
     font-style: normal;
     font-weight: bold;
     font-size: 80px;
-    color: #333333;
+    color: black;
 }
 .avtar{
     background: url('../images/avtar.png');
@@ -132,27 +146,23 @@ body{
     padding: 64px 44px;
     margin-top: 150px;
     /* height: 500px; */
-    box-shadow: 0px 4px 4px rgba(24, 144, 255, 0.2), 0px 0px 10px rgba(24, 144, 255, 0.1);
-    border-radius: 10px;
     font-family: Noto Sans SC;
     font-style: normal;
     /* font-weight: bold; */
     font-size: 60px;
     /* line-height: 93px; */
     color: #1890FF;
+    box-shadow: 0px 4px 4px rgba(24, 144, 255, 0.2), 0px 0px 10px rgba(24, 144, 255, 0.1);
+    border-radius: 10px;
 }
 .contentCard{
     padding: 64px 44px;
     margin-top: 150px;
-    /* height: 500px; */
     box-shadow: 0px 4px 4px rgba(24, 144, 255, 0.2), 0px 0px 10px rgba(24, 144, 255, 0.1);
     border-radius: 10px;
-    font-family: Noto Sans SC;
     font-style: normal;
-    /* font-weight: bold; */
     font-size: 55px;
-    /* line-height: 120px; */
-    color: #333333;
+    color: black;
 }
 .picArea{
     display: flex;
@@ -163,44 +173,67 @@ body{
     margin-top: 100px;
 }
 .pic1{
+    width: 1000px;
     height: 800px;
     margin-top: 40px;
 }
 .tourList-item{
     height: 150px;
-    border-block-end: 1px solid gray;
+    border-bottom: 1px solid gray;
+    /* padding: 40px 40px; */
+    display: flex;
+    align-items: center;
 }
-.tourList-item span{
-    border-block-start:1px solid #E4E7F8;
+/* .tourList-item span{
+    border-left:1px solid black;
     color: #1890FF;
-}
+} */
 .trafficArea{
-    overflow-x:scroll;
+    overflow-x:hidden;
     overflow-y:hidden;
+    overflow:scroll;
     white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    /* width: 3400px; */
+    /* width: 1000px;
+    height: 600px;
+    position: absolute; */
 }
 .trafficArea-item{
-    width: 1000px;
-    display:inline-block;
-    overflow:scroll;
-    padding: 64px 44px;
+    display:flex;
+    flex-direction: row;
+    padding: 84px 64px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(24, 144, 255, 0.2), 0px 0px 10px rgba(24, 144, 255, 0.1);
     border-radius: 10px;
-    height: 600px;
+    /* position: absolute;
+    height: 400px;
+    width: 1000px;  */
+   width: 800px;
 }
-.trafficArea-item span{
+/* .trafficArea-item span{
     display:inline-block;
-}
+} */
 .viewArea{
     overflow-x:scroll;
     overflow-y:hidden;
     white-space: nowrap;
+    margin-top: 20px;
 }
 .viewArea-item{
-    width: 100%;
+    width: 900px;
     display:inline-block;
-    overflow:scroll;
+    /* overflow:scroll; */
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(24, 144, 255, 0.2), 0px 0px 10px rgba(24, 144, 255, 0.1);
+    border-radius: 10px;
+    height: 1000px;
+}
+.viewArea-items{
+    width: 1000px;
+    display:inline-block;
+    /* overflow:scroll; */
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(24, 144, 255, 0.2), 0px 0px 10px rgba(24, 144, 255, 0.1);
     border-radius: 10px;
@@ -214,7 +247,7 @@ h3{
     margin-top: 40px;
 }
 .expenseBox-item{
-    width: 90%;
+    width: 85%;
     margin-top: 20px;
     padding: 64px 84px;
     background: #FFFFFF;

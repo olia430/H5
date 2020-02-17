@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div ng-app="app">
+		<div ng-controller="ctrl">
+			<table border="1" cellspacing="0">
+				<thead>
+					<th>ID</th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>生日</th>
+					<th>出生地</th>
+					
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users">
+						<!-- <td>{{user.id}}</td>
+						<td>{{user.name}}</td>
+						<td>{{user.age}}</td>
+						<td>{{user.birthday}}</td>
+						<td>{{user.city}}</td> -->
+						<td>
+							<span ng-bind="user.id"></span>
+						</td>
+						<td>
+							<span ng-bind="user.name"></span>
+						</td>
+						<td>
+							<span ng-bind="user.age"></span>
+						</td>
+						<td>
+							<span ng-bind="user.birthday"></span>
+						</td>
+						<td>
+							<span ng-bind="user.city"></span>
+						</td>
+ 
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+ 
+ 
+	<script src="http://mockjs.com/dist/mock.js"></script>
+	<script src="https://cdn.bootcss.com/angular.js/1.6.9/angular.min.js"></script>
+	<script type="text/javascript">
+	
+		// Mock响应模板
+		Mock.mock('http://test.com', {
+		    "users|5-10": [{   // 随机生成5到10个数组元素
+		        'name': '@cname',  // 中文名称
+		        'id|+1': 1,    // 属性值自动加 1，初始值为1
+		        'age|18-28': 0,   // 18至28以内随机整数, 0只是用来确定类型
+		        'birthday': '@date("yyyy-MM-dd")',  // 日期
+		        'city': '@city(true)',   // 中国城市
+		    }]
+		});
+ 
+		angular.module('app', [])
+ 
+		.service('userService', ['$http', function ($http) {
+			return {
+				doRequest:function(){
+					return $http({
+						url:'http://test.com',
+						method:'post'
+					});
+				}
+			};
+		}])
+		.controller('ctrl', ['$scope', 'userService', function ($scope, userService) {
+			userService.doRequest().then(function success(response){
+				console.log(response);
+				$scope.users = response.data.users;
+			}, function error(){
+				console.error('error...');
+			})
+		}]);
+</script>
+</body>
+</html>
