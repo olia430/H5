@@ -7,13 +7,15 @@
 <body >
    <div class="main">
     <div class="cover">
-        <div class="banner-slide">
+        <div class="banner-slide" id='h5TitleImage'>
             <img id='btnTest' onclick="doHide()" src='../images/nav.png' width="100px" style="margin-left: 8.8%;margin-top: 163px;"/>
             <div class="banner-slide-content">
-                <a class="banner-slide-title" name="a">美景之旅</a>
+                <a class="banner-slide-title" name="a" id="name"></a>
                 <div class="banner-slide-cn">
-                    <p>THE SHY 的</p>
-                    <p style="margin-top: 60px;">英国五天精彩行程</p>
+                    <div >
+                    </div>
+                    <p>The Shy</p>
+                    <p style="margin-top: 60px;" id='description'>英国五天精彩行程</p>
                 </div>    
                 <p style="margin-top: 60px;font-size: 60px;font-weight: normal;">F i ve   d a y s   o f   G r e a t   B r i t a i n</p>    
             </div>
@@ -47,16 +49,7 @@
                 </div>
                 <div class="schedule">
                     <p style="font-size: 70px;font-weight: bold;">日程安排</p>
-                    <div class="days">
-                        <a class="daysBox" href="#g" onclick="doHide()">D1</a>
-                        <a class="daysBox">D2</a>
-                        <a class="daysBox">D3</a>
-                        <a class="daysBox">D4</a>
-                        <a class="daysBox">D5</a>
-                        <a class="daysBox">D6</a>
-                        <a class="daysBox">D7</a>
-                        <a class="daysBox">D8</a>
-                    </div>
+                    <div class="days" id='daysNumber'></div>
                 </div>
             </div>
         </div>
@@ -67,13 +60,13 @@
     <div class="content">
          <a class="selfIntroduction" name="b">定制师介绍<img src="../images/avtar.png" class="round_icon"/></a>
          <div class="selfIntroduction-content">
-             <p>Hey,我是Tony Leung</p>
+             <p id="appUsrName"></p>
              <p>很高兴能为您定制在英国的五天行程，希望您在这次旅程中留下美好的回忆。</p>
              
          </div>
          <a class="contentCard" name="c">
-             <h1>英国五天精彩之旅</h1>
-             <p style="margin-top: 30px;margin-bottom: 30px;">3位成人 1位儿童 5日4晚</p>
+             <h1 id='name1'>英国五天精彩之旅</h1>
+             <p style="margin-top: 30px;margin-bottom: 30px;" id='peoples'>3位成人 1位儿童 5日4晚</p>
              <p style="line-height: normal;">从有史料记载的凯尔特人开始，英格兰已经走过了近三千年的历史；
                  在这三千年中，人类不停创造着文明、却并未破坏了自然。所以今天的我们，依旧可以行走在如画美景中、欣赏着后世的文化和艺术。 
                  从大不列颠的文化经济中心伦敦城到英格兰独特的白垩崖海岸，从大英博物馆的珍贵文物看到英式田园上空的蓝天白云……
@@ -85,24 +78,12 @@
              </div>
          </a>
          <a style="margin-top: 100px;font-size: 60px;font-weight: bold;position: absolute;" name="d">行程列表</a>
+         <div class="contentCard" id='daysList'></div>
+         <div class="selfIntroduction" style="margin-top: 100px;">行程内容</div>
+         <div class="contentCard" id='daysDetails'>
+             
+         </div>
          <div class="contentCard">
-            <div class="tourList-item"><span style="padding: 30px 40px;font-size: 80px;font-weight: bold;color: #1890FF;">D1</span><span style="padding: 30px 50px;border-left: 1px solid grey;">布达佩斯>维也纳</span></div>
-            <div class="tourList-item"><span style="padding: 30px 40px;font-size: 80px;font-weight: bold;color: #1890FF;">D2</span><span style="padding: 30px 50px;border-left: 1px solid grey;">布达佩斯>维也纳</span></div>
-            <div class="tourList-item"><span style="padding: 30px 40px;font-size: 80px;font-weight: bold;color: #1890FF;">D3</span><span style="padding: 30px 50px;border-left: 1px solid grey;">布达佩斯>维也纳</span></div>
-            <div class="tourList-item"><span style="padding: 30px 40px;font-size: 80px;font-weight: bold;color: #1890FF;">D4</span><span style="padding: 30px 50px;border-left: 1px solid grey;">布达佩斯>维也纳</span></div>
-        </div>
-        <div class="selfIntroduction" style="margin-top: 100px;">行程内容</div>
-        <div class="contentCard">
-            <a style="color: #1890FF;font-weight: bold;font-size: 80px;" name="g">Day1</a>
-            <h3>今日行程介绍</h3>
-            <p style="line-height: normal;">
-              从大不列颠的文化经济中心伦敦城到英格兰独特的白垩崖海岸，从温莎城堡的奢华高贵到街头艺术的时尚前卫，从大英博物馆的珍贵文物看到英式田园上空的蓝天白云…… 
-            </p>
-            <img class="pic1" src="../images/pic4.png"/>
-            <p style="line-height: normal;">
-              英国有一道特别的风景线，那就是南部沿海、有着上亿年历史的白垩崖海岸。 而说到白垩崖，Dover的海岸绝对是最佳代表。归来的游子，在看到多佛尔白崖的那一刻，就知道，自己终于到家了。
-            </p>
-            <img class="pic1" src="../images/pic4.png"/>
             <h3>交通</h3>
             <p style="line-height: normal;">在英国坐火车旅行是最好不过的选择，时间快，宽敞舒适，便于观赏风景。选择地铁和火车的最大初衷，是希望给大家一个零距离接触英国的真正旅行，一种自由行的轻松舒适。</p>
             <div class="trafficArea">
@@ -217,7 +198,7 @@
                     <span>Inn hotel</span>
                 </div>
             </div>
-            <h3>出行提示</h3>
+           <h3>出行提示</h3>
             <div class="travelTips">
                 <p>
                  （一）外出期间务必紧绷安全弦。外出游览，在欣赏美景同时，请注意保管好自身证件及财物，多留意周边有无可疑人员，不炫富，不张扬，谨防被盗。
@@ -283,7 +264,7 @@
                  <p style="margin-top: 1000px;margin: 0 auto;
                  color: #1890FF;">达美旅行，祝您旅途愉快~</p>
             </div>
-        </div>
+         </div>
         </div>
     </div>
     </div>
@@ -294,11 +275,77 @@
 <script src="https://cdn.bootcss.com/angular.js/1.6.9/angular.min.js"></script>
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+
+window.onload = function(tripId){
+				$.ajax({
+				url:'http://47.96.31.26:8080/SERVICE-TRAVEL-DESIGN/trip/info/51',//地址
+				// dataType:'json',//数据类型
+				type:'GET',//类型
+				timeout:2000,//超时
+                // dataType:'html',
+                headers: {DM_AUTH: 'AUTH__APP_1052_02dc643e-d465-4760-ba64-183ce35883ae'},
+				//请求成功
+				success : function(res) {  //如果请求成功，返回数据。
+                    var data = res.data
+                    var htmlName = "";
+                    htmlName +="<p>"+data.name+"</p>";
+                    $("#name").html(htmlName); //在html页面id=test的标签里显示html内容
+                    $("#name1").html(htmlName);
+                    var htmlAppUsrName ='';
+                    htmlAppUsrName +='<p>Hey,我是'+data.appUsrName+'</p>'
+                    $("#appUsrName").html(htmlAppUsrName);
+                    var htmlDescription = '';
+                    htmlDescription +='<p>'+data.description+'</p>'
+                    $("#description").html(htmlDescription);
+                    var htmlpeoples = '';
+                    htmlpeoples +='<p>'+data.adults+'位成人'+data.childrens+'位儿童'+data.babys+'位婴儿'+'</p>'
+                    $("#peoples").html(htmlpeoples);
+                    // htmlH5TitleImage +=<img src='data.h5TitleImage'/>
+                    // $("#h5TitleImage").html(htmlH5TitleImage);
+                    var daysdata = res.data.tripDays
+                    // console.log(res.data.tripDays)
+                    var htmlDaysList = '';
+                    var htmlDayNumber = '';
+                    for( var i=1;i<daysdata.length;i++){  
+                        // console.log(daysdata.length);
+                        htmlDaysList +='<div class="tourList-item">'+'<span style="padding: 30px 40px;font-size: 80px;font-weight: bold;color: #1890FF;">D'+i+'</span>'+'<span style="padding: 30px 50px;border-left: 1px solid grey;">'+daysdata[i].citys+'</span>'+'</div>'
+                        $("#daysList").html(htmlDaysList)
+                        htmlDayNumber +='<a class="daysBox" href="#g" onclick="doHide()">D'+i+'</a>'
+                        $("#daysNumber").html(htmlDayNumber)
+                    }
+                    var daysdataDetails = res.data.tripDays[2].tripDaysDetails
+                    console.log(res.data.tripDays[2].tripDaysDetails);
+                    var htmlDetails = '';
+                    for( var i=0;i<daysdataDetails.length;i++){  
+                        console.log(daysdata.length);
+                        htmlDetails += '<a style="color: #1890FF;font-weight: bold;font-size: 80px;" name="g">Day'+i+'</a>'+
+                                        '<h3>'+'今日行程介绍'+'</h3>'+
+                                        '<p>'+'从大不列颠的文化经济中心伦敦城到英格兰独特的白垩崖海岸'+'</p>'+
+                                        '<img class="pic1" src="'+daysdataDetails.poiImages+'"/>'+
+                                        '<p>'+'英国有一道特别的风景线，那就是南部沿海、有着上亿年历史的白垩崖海岸'+'</p>'+
+                                        '<img class="pic1" src="'+daysdataDetails.poiImages+'"/>'
+                        $("#daysDetails").html(htmlDetails)
+                    }
+
+                },
+				//失败/超时
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					if(textStatus==='timeout'){
+						alert('請求超時');
+						setTimeout(function(){
+							alert('重新请求');
+						},2000);
+					}
+					//alert(errorThrown);
+				}
+			})
+}
+
 $(function(){        
         //获取要定位元素距离浏览器顶部的距离
         var navH = $(".header").offset().top;
         //滚动条事件
-        console.log($(".header").offset().top);
+        // console.log($(".header").offset().top);
         $(window).scroll(function(){
                 //获取滚动条的滑动距离
                 var scroH = $(this).scrollTop();
@@ -308,21 +355,9 @@ $(function(){
                 }else if(scroH<=navH){
                         $(".header").css({"position":"realtive","margin":"0 0"});
                 }
-                console.log(scroH==navH);
+                // console.log(scroH==navH);
         })
 })
-    var data = Mock.mock({
-        'list|1-10':[{
-            'id|+1':1
-        }],
-        "string|1-10": "★",
-        '内容':'@cparagraph(0,5)',
-        
-    })
-    console.log(data)
-    var city = Mock.mock('@city')
-    console.log(city)
-
     function doHide(){
           console.log('11');
           var oDiv = document.getElementById("divTest");
@@ -334,38 +369,6 @@ $(function(){
             oDiv.style.display = "none";
             oButton.value = "显示DIV"
           }
-        }
-    
-		// Mock响应模板
-		Mock.mock('http://test.com', {
-		    "users|5-10": [{   // 随机生成5到10个数组元素
-		        'name': '@cname',  // 中文名称
-		        'id|+1': 1,    // 属性值自动加 1，初始值为1
-		        'age|18-28': 0,   // 18至28以内随机整数, 0只是用来确定类型
-		        'birthday': '@date("yyyy-MM-dd")',  // 日期
-		        'city': '@city(true)',   // 中国城市
-		    }]
-		});
- 
-		angular.module('app', [])
- 
-		.service('userService', ['$http', function ($http) {
-			return {
-				doRequest:function(){
-					return $http({
-						url:'http://test.com',
-						method:'post'
-					});
-				}
-			};
-		}])
-		.controller('ctrl', ['$scope', 'userService', function ($scope, userService) {
-			userService.doRequest().then(function success(response){
-				console.log(response);
-				$scope.users = response.data.users;
-			}, function error(){
-				console.error('error...');
-			})
-		}]);   
+        }  
 </script>
 </html>
